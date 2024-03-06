@@ -43,7 +43,7 @@ void llenar_Matriz(int ** matriz, int *filas, int *columnas, const char letra){
         for(int j = 0; j < *columnas; j++){
 
             printf("\nIngresa el valor de la matriz[%i][%i]",i,j);
-            scanf("%i",matriz[i][j]);
+            scanf("%i",&matriz[i][j]);
         }
     }
 }
