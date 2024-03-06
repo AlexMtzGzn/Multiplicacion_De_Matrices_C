@@ -24,7 +24,7 @@ Este programa en C realiza la multiplicación de dos matrices utilizando apuntad
     ```
 2. **Navegar al Directorio del Proyecto**: 
     ```bash
-    cd MULTIPLICACION_DE_MATRICES_C/src
+    cd Multiplicacion_De_Matrices_C/src
     ```
 3. **Compilar el Programa**: 
     ```bash
