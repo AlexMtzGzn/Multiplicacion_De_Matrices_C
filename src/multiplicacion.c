@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int **asigancion_Memoria(int *filas, int *columnas, const char letra)
+int **asignacion_Memoria(int *filas, int *columnas, const char letra)
 {
     if (letra != 'c')
     {
@@ -37,7 +37,7 @@ int **asigancion_Memoria(int *filas, int *columnas, const char letra)
 int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *columnasA, int *filasB, int *columnasB)
 {
 
-    int **matrizC = asigancion_Memoria(filasA, columnasB, 'c');
+    int **matrizC = asignacion_Memoria(filasA, columnasB, 'c');
 
     for (int i = 0; i < *filasA; i++)
     {
@@ -82,8 +82,8 @@ int main(void)
 
     int **matrizA, **matrizB, **matrizC;
 
-    matrizA = asigancion_Memoria(&filasA, &columnasA, 'A');
-    matrizB = asigancion_Memoria(&filasB, &columnasB, 'B');
+    matrizA = asignacion_Memoria(&filasA, &columnasA, 'A');
+    matrizB = asignacion_Memoria(&filasB, &columnasB, 'B');
 
     if (columnasA != filasB)
     {
