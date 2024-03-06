@@ -56,7 +56,7 @@ int main(void)
     matrizA = asigancion_Memoria(&filasA, &columnasA, 'A');
     matrizB = asigancion_Memoria(&filasB, &columnasB, 'B');
 
-    if (filasA == columnasB)
+    if (columnasA != filasB)
     {
         liberar_Memoria(matrizA,matrizB);
 
