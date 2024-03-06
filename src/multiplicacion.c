@@ -3,8 +3,7 @@
 
 int **asignacion_Memoria(int *filas, int *columnas, const char letra)
 {
-    if (letra != 'C')
-    {
+   
         do
         {
             printf("\nIngresa las filas de la matriz %c: ", letra);
@@ -24,7 +23,6 @@ int **asignacion_Memoria(int *filas, int *columnas, const char letra)
                 printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
 
         } while (*columnas < 2);
-    }
 
     int **matriz = (int **)malloc(*filas * sizeof(int *));
 
@@ -50,7 +48,12 @@ void llenar_Matriz(int ** matriz, int *filas, int *columnas, const char letra){
 
 int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *columnasA, int *filasB, int *columnasB)
 {
-    int **matrizC = asignacion_Memoria(filasA, columnasB, 'C');
+
+    int **matrizC = (int **)malloc(*filasA * sizeof(int *));
+
+    for (int i = 0; i < *filasA; i++)
+        matrizC[i] = (int *)malloc(*columnasB * sizeof(int));
+
 
     for (int i = 0; i < *filasA; i++)
     {
