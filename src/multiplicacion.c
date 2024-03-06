@@ -3,26 +3,28 @@
 
 int **asignacion_Memoria(int *filas, int *columnas, const char letra)
 {
-
-    do
+    if (letra != 'C')
     {
-        printf("\nIngresa las filas de la matriz %c: ", letra);
-        scanf("%i", filas);
+        do
+        {
+            printf("\nIngresa las filas de la matriz %c: ", letra);
+            scanf("%i", filas);
 
-        if (*filas < 1)
-            printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
+            if (*filas < 1)
+                printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
 
-    } while (*filas < 1);
+        } while (*filas < 1);
 
-    do
-    {
-        printf("\nIngresa las columnas de la matriz %c: ", letra);
-        scanf("%i", columnas);
+        do
+        {
+            printf("\nIngresa las columnas de la matriz %c: ", letra);
+            scanf("%i", columnas);
 
-        if (*columnas < 1)
-            printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
+            if (*columnas < 1)
+                printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
 
-    } while (*columnas < 2);
+        } while (*columnas < 2);
+    }
 
     int **matriz = (int **)malloc(*filas * sizeof(int *));
 
@@ -51,10 +53,7 @@ void llenar_Matriz(int **matriz, int *filas, int *columnas, const char letra)
 
 int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *columnasA, int *filasB, int *columnasB)
 {
-    int **matrizC = (int **)malloc(*filasA * sizeof(int *));
-
-    for (int i = 0; i < *filasA; i++)
-        matrizC[i] = (int *)malloc(*columnasB * sizeof(int));
+    int **matrizC = asignacion_Memoria(filasA,columnasB,'C');
 
     for (int i = 0; i < *filasA; i++)
     {
@@ -115,7 +114,7 @@ int main(void)
     llenar_Matriz(matrizB, &filasB, &columnasB, 'B');
 
     matrizC = multiplicacion_Matrices(matrizA, matrizB, &filasA, &columnasA, &filasB, &columnasB);
-    
+
     imprimir_matriz(matrizA, &filasA, &columnasB, 'A');
     imprimir_matriz(matrizB, &filasB, &columnasB, 'B');
     imprimir_matriz(matrizC, &filasA, &columnasB, 'C');
