@@ -34,6 +34,20 @@ int **asignacion_Memoria(int *filas, int *columnas, const char letra)
     return matriz;
 }
 
+void llenar_Matriz(int ** matriz, int *filas, int *columnas, const char letra){
+
+    printf("\nLa matriz %c", letra);
+
+    for(int i = 0; i < *filas; i++){
+
+        for(int j = 0; j < *columnas; j++){
+
+            printf("\nIngresa el valor de la matriz[%i][%i]",i,j);
+            scanf("%i",matriz[i][j]);
+        }
+    }
+}
+
 int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *columnasA, int *filasB, int *columnasB)
 {
 
@@ -45,9 +59,7 @@ int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *co
         {
             matrizC[i][j] = 0;
             for (int k = 0; k < *columnasA; k++)
-            {
                 matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
-            }
         }
     }
 
@@ -94,6 +106,9 @@ int main(void)
     }
 
     matrizC = multiplicacion_Matrices(matrizA,matrizB,&filasA,&columnasA,&filasB,&columnasB);
+
+    llenar_Matriz(matrizA,filasA,columnasA);
+    llenar_Matriz(matrizB,filasB,columnasB);
 
     imprimir_matriz(matrizA,&filasA,&columnasB,'A');
     imprimir_matriz(matrizB,&filasB,&columnasB,'B');
