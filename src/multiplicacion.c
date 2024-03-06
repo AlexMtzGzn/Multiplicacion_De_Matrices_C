@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int** asigancion_Memoria(int * filas, int * columnas){
+int** asigancion_Memoria(int * filas, int * columnas, const char letra){
 
-    printf("\nIngresa las filas de la matriz %c: ");
-    printf("\nIngresa las columnas de la matriz %c: ");
+    printf("\nIngresa las filas de la matriz %c: ",letra);
+    printf("\nIngresa las columnas de la matriz %c: ",letra);
     
+
 }
 
 
