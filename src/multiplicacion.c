@@ -53,7 +53,7 @@ void llenar_Matriz(int **matriz, int *filas, int *columnas, const char letra)
 
 int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *columnasA, int *filasB, int *columnasB)
 {
-    int **matrizC = asignacion_Memoria(filasA,columnasB,'C');
+    int **matrizC = asignacion_Memoria(filasA, columnasB, 'C');
 
     for (int i = 0; i < *filasA; i++)
     {
