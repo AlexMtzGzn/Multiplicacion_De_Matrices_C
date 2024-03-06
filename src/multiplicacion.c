@@ -107,8 +107,8 @@ int main(void)
 
     matrizC = multiplicacion_Matrices(matrizA,matrizB,&filasA,&columnasA,&filasB,&columnasB);
 
-    llenar_Matriz(matrizA,filasA,columnasA);
-    llenar_Matriz(matrizB,filasB,columnasB);
+    llenar_Matriz(matrizA,filasA,columnasA,'A');
+    llenar_Matriz(matrizB,filasB,columnasB,'B');
 
     imprimir_matriz(matrizA,&filasA,&columnasB,'A');
     imprimir_matriz(matrizB,&filasB,&columnasB,'B');
