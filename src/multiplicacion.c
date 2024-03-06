@@ -54,6 +54,19 @@ int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *co
     return matrizC;
 }
 
+void imprimir_matriz(int ** matriz, int *filas, int *columnas, const char letra){
+
+    printf("\nMatriz %c\n", letra);
+
+    for(int i = 0; i < *filas; i++){
+        for(int j = 0; j < *columnas; j++){
+            printf("%i",matriz[i][j]);
+        }
+
+        printf("\n");
+    }
+}
+
 void liberar_Memoria(int **matrizA, int **matrizB)
 {
 
@@ -77,6 +90,10 @@ int main(void)
 
         return 0;
     }
+
+    imprimir_matriz(matrizA,&filasA,&columnasB,'A');
+    imprimir_matriz(matrizB,&filasB,&columnasB,'B');
+    imprimir_matriz(matrizC,&filasA,&columnasB,'C');
 
     liberar_Memoria(matrizA, matrizB);
     free(matrizC);
