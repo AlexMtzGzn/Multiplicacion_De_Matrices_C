@@ -51,7 +51,8 @@ int main(void)
 
     if (filasA == columnasB)
     {
-
+        liberar_Memoria(matrizA,matrizB);
+        
         return 0;
     }
 
