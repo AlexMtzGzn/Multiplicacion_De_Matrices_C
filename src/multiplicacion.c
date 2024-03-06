@@ -67,8 +67,12 @@ void imprimir_matriz(int ** matriz, int *filas, int *columnas, const char letra)
     }
 }
 
-void liberar_Memoria(int **matriz)
+void liberar_Memoria(int **matriz, int *columnas)
 {
+    for(int i = 0; i < *columnas; i++)
+    free(matriz[i]);
+
+free(matriz);
 }
 
 int main(void)
@@ -83,8 +87,8 @@ int main(void)
 
     if (columnasA != filasB)
     {
-        liberar_Memoria(matrizA);
-        liberar_Memoria(matrizB);
+        liberar_Memoria(matrizA,&columnasA);
+        liberar_Memoria(matrizB,&columnasB);
 
         return 0;
     }
@@ -93,6 +97,9 @@ int main(void)
     imprimir_matriz(matrizB,&filasB,&columnasB,'B');
     imprimir_matriz(matrizC,&filasA,&columnasB,'C');
 
+    liberar_Memoria(matrizA,&columnasA);
+    liberar_Memoria(matrizB,&columnasB);
+    liberar_Memoria(matrizC,&columnasB);
 
 
     return 0;
