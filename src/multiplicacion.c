@@ -7,7 +7,7 @@ int **asigancion_Memoria(int *filas, int *columnas, const char letra)
     do
     {
         printf("\nIngresa las filas de la matriz %c: ", letra);
-        scanf("%i", &filas);
+        scanf("%i", filas);
 
         if (*filas < 1)
             printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
@@ -17,7 +17,7 @@ int **asigancion_Memoria(int *filas, int *columnas, const char letra)
     do
     {
         printf("\nIngresa las columnas de la matriz %c: ", letra);
-        scanf("%i", &columnas);
+        scanf("%i", columnas);
 
         if (*filas < 1)
             printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
@@ -46,13 +46,13 @@ int main(void)
 
     int **matrizA, **matrizB, **matrizC;
 
-    matrizA = asigancion_Memoria(&filasA, columnasA, 'A');
-    matrizB = asigancion_Memoria(&filasB, columnasB, 'B');
+    matrizA = asigancion_Memoria(&filasA, &columnasA, 'A');
+    matrizB = asigancion_Memoria(&filasB, &columnasB, 'B');
 
     if (filasA == columnasB)
     {
         liberar_Memoria(matrizA,matrizB);
-        
+
         return 0;
     }
 
