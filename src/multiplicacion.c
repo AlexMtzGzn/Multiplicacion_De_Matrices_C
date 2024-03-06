@@ -28,8 +28,15 @@ int **asigancion_Memoria(int *filas, int *columnas, const char letra)
 
     for (int i = 0; i < *filas; i++)
         matriz[i] = (int *)malloc(*columnas * sizeof(int));
-    
+
     return matriz;
+}
+
+void liberar_Memoria(int **matrizA, int **matrizB)
+{
+
+    free(matrizA);
+    free(matrizB);
 }
 
 int main(void)
@@ -37,10 +44,16 @@ int main(void)
 
     int filasA, columnasA, filasB, columnasB;
 
-    int **matrizA, **matrizB;
+    int **matrizA, **matrizB, **matrizC;
 
     matrizA = asigancion_Memoria(&filasA, columnasA, 'A');
     matrizB = asigancion_Memoria(&filasB, columnasB, 'B');
+
+    if (filasA == columnasB)
+    {
+
+        return 0;
+    }
 
     return 0;
 }
