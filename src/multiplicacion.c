@@ -60,7 +60,7 @@ void imprimir_matriz(int ** matriz, int *filas, int *columnas, const char letra)
 
     for(int i = 0; i < *filas; i++){
         for(int j = 0; j < *columnas; j++){
-            printf("%i",matriz[i][j]);
+            printf(" %i ",matriz[i][j]);
         }
 
         printf("\n");
