@@ -20,7 +20,7 @@ int **asigancion_Memoria(int *filas, int *columnas, const char letra)
             printf("\nIngresa las columnas de la matriz %c: ", letra);
             scanf("%i", columnas);
 
-            if (*filas < 1)
+            if (*columnas < 1)
                 printf("\nIngresa de nuevo las columnas de la matriz %c", letra);
 
         } while (*columnas < 2);
@@ -92,6 +92,8 @@ int main(void)
 
         return 0;
     }
+
+    matrizC = multiplicacion_Matrices(matrizA,matrizB,&filasA,&columnasA,&filasB,&columnasB);
 
     imprimir_matriz(matrizA,&filasA,&columnasB,'A');
     imprimir_matriz(matrizB,&filasB,&columnasB,'B');
