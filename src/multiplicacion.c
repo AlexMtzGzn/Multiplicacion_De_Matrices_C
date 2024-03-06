@@ -99,8 +99,8 @@ int main(void)
 
     if (columnasA != filasB)
     {
-        liberar_Memoria(matrizA,&columnasA);
-        liberar_Memoria(matrizB,&columnasB);
+        liberar_Memoria(matrizA,&filasA);
+        liberar_Memoria(matrizB,&filasB);
 
         return 0;
     }
