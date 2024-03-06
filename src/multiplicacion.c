@@ -64,6 +64,8 @@ int main(void)
     }
 
 
+    liberar_Memoria(matrizA,matrizB);
+    free(matrizC);
 
     return 0;
 }
