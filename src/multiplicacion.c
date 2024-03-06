@@ -39,12 +39,12 @@ int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *co
 
     int **matrizC = asigancion_Memoria(filasA, columnasB, 'c');
 
-    for (int i = 0; i < filasA; i++)
+    for (int i = 0; i < *filasA; i++)
     {
-        for (int j = 0; j < columnasB; j++)
+        for (int j = 0; j < *columnasB; j++)
         {
             matrizC[i][j] = 0;
-            for (int k = 0; k < columnasA; k++)
+            for (int k = 0; k < *columnasA; k++)
             {
                 matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
             }
