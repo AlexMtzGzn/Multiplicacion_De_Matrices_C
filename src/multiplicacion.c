@@ -3,7 +3,7 @@
 
 int **asignacion_Memoria(int *filas, int *columnas, const char letra)
 {
-    if (letra != 'c')
+    if (letra != 'C')
     {
         do
         {
@@ -51,7 +51,7 @@ void llenar_Matriz(int ** matriz, int *filas, int *columnas, const char letra){
 int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *columnasA, int *filasB, int *columnasB)
 {
 
-    int **matrizC = asignacion_Memoria(filasA, columnasB, 'c');
+    int **matrizC = asignacion_Memoria(filasA, columnasB, 'C');
 
     for (int i = 0; i < *filasA; i++)
     {
@@ -65,6 +65,7 @@ int **multiplicacion_Matrices(int **matrizA, int **matrizB, int *filasA, int *co
 
     return matrizC;
 }
+
 
 void imprimir_matriz(int ** matriz, int *filas, int *columnas, const char letra){
 
