@@ -32,6 +32,13 @@ int **asigancion_Memoria(int *filas, int *columnas, const char letra)
     return matriz;
 }
 
+int ** multiplicacion_Matrices(int ** matrizA, int** matrizB, int *filasA, int *columnasA , int *filasB, int *columnasB){
+
+    //int **matrizC = asigancion_Memoria();
+
+    //return matrizC;
+}
+
 void liberar_Memoria(int **matrizA, int **matrizB)
 {
 
@@ -55,6 +62,8 @@ int main(void)
 
         return 0;
     }
+
+
 
     return 0;
 }
